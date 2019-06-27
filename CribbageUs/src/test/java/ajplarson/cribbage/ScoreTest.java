@@ -45,12 +45,12 @@ public class ScoreTest {
     public void testRunsScore() {
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(1, Suit.CLUBS));
+        cards.add(new Card(2, Suit.HEARTS));
+        cards.add(new Card(3, Suit.CLUBS));
         cards.add(new Card(4, Suit.HEARTS));
-        cards.add(new Card(5, Suit.CLUBS));
-        cards.add(new Card(6, Suit.HEARTS));
-        cards.add(new Card(7, Suit.SPADES));
+        cards.add(new Card(4, Suit.SPADES));
         
-        assertEquals(4, score.getRunsScore(cards));
+        assertEquals(8, score.getRunsScore(cards));
     }
 
     @Test
