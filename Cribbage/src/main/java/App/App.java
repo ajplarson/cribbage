@@ -1,6 +1,8 @@
 package App;
 
-import CribbageGame.Game;
+import controller.Controller;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -8,7 +10,8 @@ import CribbageGame.Game;
  */
 public class App {
     public static void main(String[] args){
-        Game thisGame = new Game();
-        thisGame.playGame();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("context.xml");
+        Controller controller = ctx.getBean("controller", Controller.class);
+        controller.run();
     }
 }
