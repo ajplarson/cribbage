@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajplarson.cribbage;
+package CribbageGame;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,12 +20,20 @@ public class Round {
     private List<Card> dealerHand;
     private List<Card> ponyHand;
     private List<Card> crib;
+    private int dealerScore;
+    private int ponyScore;
+    private static final int JACK = 11;
+    private static final int QUEEN = 12;
+    private static final int KING = 13;
+    
 
     public Round() {
         this.deck = setUpDeck();
         ponyHand = new ArrayList<>();
         dealerHand = new ArrayList<>();
         crib = new ArrayList<>();
+        dealerScore = 0;
+        ponyScore = 0;
     }
     
     public void run(){
@@ -39,6 +47,32 @@ public class Round {
         printDeck(dealerHand);
         printDeck(ponyHand);
         printDeck(crib);
+        
+        Card upCard = cutDeck();
+        dealerScore += heelsScore(upCard);
+        System.out.println("upCard: "+upCard.getValue()+" "+upCard.getSuit()); //remove later
+        
+        
+        Score score = new Score();
+        dealerScore += score.scoreHand(dealerHand, upCard);
+        System.out.println("Dealer score before crib: "+dealerScore);
+        ponyScore += score.scoreHand(ponyHand, upCard);
+        System.out.println("Pony score: "+ponyScore);
+        dealerScore += score.scoreHand(crib, upCard);
+        System.out.println("Dealer hand after crib: "+dealerScore);
+        
+    }
+    
+    public int heelsScore(Card upCard){
+        if(upCard.getValue() == JACK){
+            return 2;
+        }
+        return 0;
+    }
+    
+    public Card cutDeck(){
+        deck = shuffleDeck(deck);
+        return deck.get(0);
     }
     
     public void printDeck(List<Card> deck){
@@ -97,4 +131,13 @@ public class Round {
         }
         return discards;
     }
+
+    public int getDealerScore() {
+        return dealerScore;
+    }
+
+    public int getPonyScore() {
+        return ponyScore;
+    }
+
 }

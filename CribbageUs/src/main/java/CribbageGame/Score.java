@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajplarson.cribbage;
+package CribbageGame;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -83,18 +83,19 @@ public class Score {
 
     public int getFifteensScore(List<Card> deck) {
         int numFifteens = 0;
-        
+        List<Card> adjustedDeck = new ArrayList<>();
         //loop to set J, Q, K to 10
         for(int i = 0; i < deck.size(); i++) {
+            adjustedDeck.add(deck.get(i));
             if(deck.get(i).getValue() > 10) {
-                deck.get(i).setValue(10);
+                adjustedDeck.get(i).setValue(10);
             }
         }
         
-        numFifteens += getFifteensTwo(deck);
-        numFifteens += getFifteensThree(deck);
-        numFifteens += getFifteensFour(deck);
-        numFifteens += getFifteensFive(deck);
+        numFifteens += getFifteensTwo(adjustedDeck);
+        numFifteens += getFifteensThree(adjustedDeck);
+        numFifteens += getFifteensFour(adjustedDeck);
+        numFifteens += getFifteensFive(adjustedDeck);
 
         return numFifteens * 2;
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ajplarson.cribbage;
+package CribbageGame;
 
 import java.util.List;
 

@@ -1,5 +1,8 @@
 package ajplarson.cribbage;
 
+import CribbageGame.Suit;
+import CribbageGame.Score;
+import CribbageGame.Card;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
