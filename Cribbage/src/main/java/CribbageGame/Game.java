@@ -10,7 +10,7 @@ public class Game {
         
     }
     
-    public void playGame(){
+    public void playComputerComputerGame(){
         
         playerOneIsDealer = true;
         

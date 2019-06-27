@@ -1,6 +1,7 @@
 package dao;
 
 import dto.Player;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,6 +9,8 @@ import java.util.List;
  * @author jackelder
  */
 public class PlayersDaoFileImpl implements PlayersDao {
+    
+    private List<Player> player = new ArrayList<>();
 
     @Override
     public List<Player> getAllPlayers() {
