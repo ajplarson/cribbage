@@ -11,5 +11,9 @@ public class View {
         this.io = io;
     }
     
+    public void displayWelcome(){
+        io.print("=== Let's Play Cribbage! ===");
+    }
+    
     
 }
