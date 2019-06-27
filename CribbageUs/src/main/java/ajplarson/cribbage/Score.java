@@ -25,16 +25,13 @@ public class Score {
 
     public int getRunsScore(List<Card> deck) {
         int runScore = 0;
-        int sum = 0;
-        boolean foundRun = false;
+        boolean foundRunFour = false;
         List<Integer> cardValues = new ArrayList<>();
         //reads in card values to a list
         for (int i = 0; i < deck.size(); i++) {
             cardValues.add(deck.get(i).getValue());
-            sum += deck.get(i).getValue();
         }
         Collections.sort(cardValues);
-        int[] combination = new int[4];
         
         if (cardValues.get(0) == cardValues.get(1)-1 && cardValues.get(1) == cardValues.get(2)-1 &&
                 cardValues.get(2) == cardValues.get(3)-1 && cardValues.get(3) == cardValues.get(4)-1) {
@@ -46,78 +43,30 @@ public class Score {
             for (int j = i + 1; j < deck.size() - 2; j++) {
                 for(int k = j+1; k < deck.size() -1; k++){
                     for(int l = k+1; l < deck.size(); l++){
-                        combination[0] = cardValues.get(i);
-                        combination[1] = cardValues.get(j);
-                        combination[2] = cardValues.get(k);
-                        combination[3] = cardValues.get(l);
-                        if(combination[0] == combination[1]-1 &&
-                                combination[1] == combination[2]-1 &&
-                                combination[2] == combination[3]-1){
+                        if(cardValues.get(i) == cardValues.get(j)-1 &&
+                                cardValues.get(j) == cardValues.get(k)-1 &&
+                                cardValues.get(k) == cardValues.get(l)-1){
                             runScore += 4;
-                            foundRun = true;
+                            foundRunFour = true;
                         }
                     }
                 }
             }
         }
         
-        if (!foundRun) {
+        if (!foundRunFour) {
             for (int i = 0; i < deck.size() - 2; i++) {
                 for (int j = i + 1; j < deck.size() - 1; j++) {
                     for (int k = j + 1; k < deck.size(); k++) {
-                        combination[0] = cardValues.get(i);
-                        combination[1] = cardValues.get(j);
-                        combination[2] = cardValues.get(k);
-                        if(combination[0] == combination[1] - 1 &&
-                                combination[2] == combination[1] - 1){
+                        if(cardValues.get(i) == cardValues.get(j) - 1 &&
+                                cardValues.get(j) == cardValues.get(k) - 1){
                             runScore += 3;
-                            foundRun = true;
                         }
                     }
                 }
             }
         }
         return runScore;
-        
-        
-        
-//        for(int i =0; i< deck.size()-2; i++){
-//            for(int j = i+1; j < deck.size()-1; j++){
-//                for(int k = j+1; k < deck.size(); k++){
-//                    if(cardValues.get(i) == cardValues.get(j)-1){
-//                        
-//                    }
-//                }
-//            }
-//            
-//        }
-        
-        
-        
-        
-        
-        
-//        if (cardValues.get(0) == cardValues.get(1)-1 && cardValues.get(1) == cardValues.get(2)-1 &&
-//                cardValues.get(2) == cardValues.get(3)-1 && cardValues.get(3) == cardValues.get(4)-1) {
-//            runScore = 5;  
-//        } else {
-//            for (int i = 0; i < deck.size() - 3; i++) {
-//                for (int j = i + 1; j < deck.size() - 2; j++) {
-//                    for (int k = j + 1; k < deck.size() - 1; k++) {
-//                        for (int l = k + 1; l < deck.size(); l++) {
-//                            if (cardValues.get(i) == cardValues.get(j) - 1 && cardValues.get(j) == cardValues.get(k) - 1
-//                                    && cardValues.get(k) == cardValues.get(l) - 1) {
-//                                runScore += 4;
-//                            } else if ((cardValues.get(i) == cardValues.get(j) - 1 && cardValues.get(j) == cardValues.get(k) - 1)
-//                                    || (cardValues.get(j) == cardValues.get(k) - 1 && cardValues.get(k) == cardValues.get(l) - 1)) {
-//                                runScore += 3;
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        return runScore;
     }
 
     public int getFifteensScore(List<Card> deck) {

@@ -42,15 +42,51 @@ public class ScoreTest {
     }
     
     @Test
-    public void testRunsScore() {
+    public void testRunsScore12233() {
         List<Card> cards = new ArrayList<>();
         cards.add(new Card(1, Suit.CLUBS));
         cards.add(new Card(2, Suit.HEARTS));
+        cards.add(new Card(2, Suit.CLUBS));
+        cards.add(new Card(3, Suit.HEARTS));
+        cards.add(new Card(3, Suit.SPADES));
+        
+        assertEquals(12, score.getRunsScore(cards));
+    }
+    
+    @Test
+    public void testRunsScore14567() {
+        List<Card> cards = new ArrayList<>();
+        cards.add(new Card(1, Suit.CLUBS));
+        cards.add(new Card(4, Suit.HEARTS));
+        cards.add(new Card(5, Suit.CLUBS));
+        cards.add(new Card(6, Suit.HEARTS));
+        cards.add(new Card(7, Suit.SPADES));
+        
+        assertEquals(4, score.getRunsScore(cards));
+    }
+    
+    @Test
+    public void testRunsScore11123() {
+        List<Card> cards = new ArrayList<>();
+        cards.add(new Card(1, Suit.CLUBS));
+        cards.add(new Card(1, Suit.HEARTS));
+        cards.add(new Card(1, Suit.CLUBS));
+        cards.add(new Card(2, Suit.HEARTS));
+        cards.add(new Card(3, Suit.SPADES));
+        
+        assertEquals(9, score.getRunsScore(cards));
+    }
+    
+    @Test
+    public void testRunsScore34567() {
+        List<Card> cards = new ArrayList<>();
         cards.add(new Card(3, Suit.CLUBS));
         cards.add(new Card(4, Suit.HEARTS));
-        cards.add(new Card(4, Suit.SPADES));
+        cards.add(new Card(5, Suit.CLUBS));
+        cards.add(new Card(6, Suit.HEARTS));
+        cards.add(new Card(7, Suit.SPADES));
         
-        assertEquals(8, score.getRunsScore(cards));
+        assertEquals(5, score.getRunsScore(cards));
     }
 
     @Test

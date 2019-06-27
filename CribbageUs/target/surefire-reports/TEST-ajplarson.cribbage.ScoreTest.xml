@@ -1,80 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="1" name="ajplarson.cribbage.ScoreTest" time="0.005" errors="0" skipped="0">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ajplarson.cribbage.ScoreTest" time="0.015" tests="7" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="12.0.1+12"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/jackelder/NetBeansProjects/CribbageUs"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="12"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/jackelder/NetBeansProjects/CribbageUs/target/test-classes:/Users/jackelder/NetBeansProjects/CribbageUs/target/classes:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar:/Users/jackelder/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/jackelder/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/jackelder/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.3.1/junit-jupiter-params-5.3.1.jar:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.3.1/junit-jupiter-engine-5.3.1.jar:/Users/jackelder/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar:"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
+    <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="path.separator" value=":"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="12"/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="test" value="ajplarson.cribbage.ScoreTest"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/jackelder/NetBeansProjects/CribbageUs"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="java.runtime.version" value="12.0.1+12"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/7z/y4l788n94dqc0lfrsprnb4400000gn/T/"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="maven.ext.class.path" value="/Users/jackelder/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
-    <property name="classworlds.conf" value="/Users/jackelder/netbeans/java/maven/bin/m2.conf"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/jackelder/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="jdk.debug" value="release"/>
-    <property name="java.class.version" value="56.0"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="jpda.listen" value="true"/>
-    <property name="os.version" value="10.14"/>
-    <property name="jpda.address" value="61856"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/jackelder/NetBeansProjects/CribbageUs/target/surefire/surefirebooter924889019595162780.jar /Users/jackelder/NetBeansProjects/CribbageUs/target/surefire 2019-06-27T12-29-11_316-jvmRun1 surefire16560688715005902671tmp surefire_02163738212184134856tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="ajplarson.cribbage.ScoreTest"/>
+    <property name="surefire.test.class.path" value="/Users/jackelder/NetBeansProjects/CribbageUs/target/test-classes:/Users/jackelder/NetBeansProjects/CribbageUs/target/classes:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar:/Users/jackelder/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/jackelder/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/jackelder/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.3.1/junit-jupiter-params-5.3.1.jar:/Users/jackelder/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.3.1/junit-jupiter-engine-5.3.1.jar:/Users/jackelder/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/jackelder"/>
-    <property name="user.timezone" value="America/Chicago"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.specification.version" value="12"/>
-    <property name="user.name" value="jackelder"/>
-    <property name="java.class.path" value="/Users/jackelder/netbeans/java/maven/boot/plexus-classworlds-2.5.2.jar"/>
-    <property name="maven.surefire.debug" value="-agentlib:jdwp=transport=dt_socket,server=n,address=61856"/>
-    <property name="java.vm.specification.version" value="12"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=ajplarson.cribbage.ScoreTest -DforkMode=once -Dmaven.surefire.debug=-agentlib:jdwp=transport=dt_socket,server=n,address=61856 -Djpda.listen=true -Djpda.address=61856 -Dmaven.ext.class.path=/Users/jackelder/netbeans/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="12.0.1"/>
-    <property name="java.vendor" value="AdoptOpenJDK"/>
-    <property name="maven.home" value="/Users/jackelder/netbeans/java/maven"/>
-    <property name="file.separator" value="/"/>
     <property name="java.version.date" value="2019-04-16"/>
-    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-build/issues"/>
-    <property name="forkMode" value="once"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="java.vendor.version" value="AdoptOpenJDK"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/adoptopenjdk-12.0.1.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/jackelder/NetBeansProjects/CribbageUs"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/jackelder/NetBeansProjects/CribbageUs/target/surefire/surefirebooter924889019595162780.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="12.0.1+12"/>
+    <property name="user.name" value="jackelder"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.14"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="AdoptOpenJDK"/>
+    <property name="maven.ext.class.path" value="/Users/jackelder/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/Users/jackelder/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-build/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/7z/y4l788n94dqc0lfrsprnb4400000gn/T/"/>
+    <property name="java.version" value="12.0.1"/>
+    <property name="user.dir" value="/Users/jackelder/NetBeansProjects/CribbageUs"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/Users/jackelder/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.vm.version" value="12.0.1+12"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="56.0"/>
   </properties>
-  <testcase classname="ajplarson.cribbage.ScoreTest" name="ajplarson.cribbage.ScoreTest.testScoreHand20" time="0.004"/>
-  <testcase classname="ajplarson.cribbage.ScoreTest" name="ajplarson.cribbage.ScoreTest.testScoreHand8" time="0"/>
-  <testcase classname="ajplarson.cribbage.ScoreTest" name="ajplarson.cribbage.ScoreTest.testRunsScore" time="0.001">
-    <failure message="expected: &lt;3&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;3&gt; but was: &lt;0&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:54)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:195)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:327)
-	at ajplarson.cribbage.ScoreTest.testRunsScore(ScoreTest.java:53)
-</failure>
-  </testcase>
-  <testcase classname="ajplarson.cribbage.ScoreTest" name="ajplarson.cribbage.ScoreTest.testGetPairs" time="0"/>
+  <testcase name="testGetPairs" classname="ajplarson.cribbage.ScoreTest" time="0.004"/>
+  <testcase name="testScoreHand20" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
+  <testcase name="testScoreHand8" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
+  <testcase name="testRunsScore11123" classname="ajplarson.cribbage.ScoreTest" time="0"/>
+  <testcase name="testRunsScore12233" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
+  <testcase name="testRunsScore14567" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
+  <testcase name="testRunsScore34567" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
 </testsuite>
