@@ -19,7 +19,7 @@ public class Controller {
     
     public void run(){
         Game game = new Game();
-        game.playGame();
+        game.playComputerComputerGame();
     }
     
     
