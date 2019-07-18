@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ajplarson.cribbage.ScoreTest" time="0.001" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ajplarson.cribbage.ScoreTest" time="0.005" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,8 +17,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.3.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\16128\AppData\Local\Temp\surefire8862693976512743573\surefirebooter911249114478181256.jar C:\Users\16128\AppData\Local\Temp\surefire8862693976512743573 2019-06-27T15-15-44_234-jvmRun1 surefire420428270309016621tmp surefire_011783053088144482889tmp"/>
+    <property name="sun.java.command" value="C:\Users\16128\AppData\Local\Temp\surefire9887614005125301147\surefirebooter13564525972911465118.jar C:\Users\16128\AppData\Local\Temp\surefire9887614005125301147 2019-07-04T19-12-41_829-jvmRun1 surefire2229717576277479469tmp surefire_015350155470314908519tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="ajplarson.cribbage.ScoreTest"/>
     <property name="surefire.test.class.path" value="C:\Users\16128\Documents\Misc\cribbage\Cribbage\target\test-classes;C:\Users\16128\Documents\Misc\cribbage\Cribbage\target\classes;C:\Users\16128\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.3.1\junit-jupiter-api-5.3.1.jar;C:\Users\16128\.m2\repository\org\apiguardian\apiguardian-api\1.0.0\apiguardian-api-1.0.0.jar;C:\Users\16128\.m2\repository\org\opentest4j\opentest4j\1.1.1\opentest4j-1.1.1.jar;C:\Users\16128\.m2\repository\org\junit\platform\junit-platform-commons\1.3.1\junit-platform-commons-1.3.1.jar;C:\Users\16128\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.3.1\junit-jupiter-params-5.3.1.jar;C:\Users\16128\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.3.1\junit-jupiter-engine-5.3.1.jar;C:\Users\16128\.m2\repository\org\junit\platform\junit-platform-engine\1.3.1\junit-platform-engine-1.3.1.jar;C:\Users\16128\.m2\repository\org\springframework\spring-context\5.1.8.RELEASE\spring-context-5.1.8.RELEASE.jar;C:\Users\16128\.m2\repository\org\springframework\spring-aop\5.1.8.RELEASE\spring-aop-5.1.8.RELEASE.jar;C:\Users\16128\.m2\repository\org\springframework\spring-beans\5.1.8.RELEASE\spring-beans-5.1.8.RELEASE.jar;C:\Users\16128\.m2\repository\org\springframework\spring-core\5.1.8.RELEASE\spring-core-5.1.8.RELEASE.jar;C:\Users\16128\.m2\repository\org\springframework\spring-jcl\5.1.8.RELEASE\spring-jcl-5.1.8.RELEASE.jar;C:\Users\16128\.m2\repository\org\springframework\spring-expression\5.1.8.RELEASE\spring-expression-5.1.8.RELEASE.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\16128"/>
@@ -33,7 +34,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\16128\AppData\Local\Temp\surefire8862693976512743573\surefirebooter911249114478181256.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\16128\AppData\Local\Temp\surefire9887614005125301147\surefirebooter13564525972911465118.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.3+7"/>
@@ -61,18 +62,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testGetPairs" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
-  <testcase name="testScoreHand20" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetKnobsScore1" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetKnobsScore2" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testScoreHand8" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testRunsScore11123" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testRunsScore12233" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testRunsScore14567" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testRunsScore34567" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testHand29" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetFlushScore1" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetFlushScore2" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetFlushScore3" classname="ajplarson.cribbage.ScoreTest" time="0"/>
-  <testcase name="testGetFlushScore4" classname="ajplarson.cribbage.ScoreTest" time="0"/>
+  <testcase name="testScoreHand20" classname="ajplarson.cribbage.ScoreTest" time="0.001"/>
 </testsuite>

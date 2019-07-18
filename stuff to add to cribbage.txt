@@ -1,0 +1,148 @@
+ public class PersistenceException extends Exception {
+
+    public PersistenceException(String message) {
+        super(message);
+    }
+
+    public PersistenceException(String message, Throwable cause) {
+        super(message, cause);
+    }
+}
+    
+    
+    
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * @author ajplarson
+ */
+public class ItemDAOFileImpl implements ItemDAO {
+
+    public static final String DELIMITER = "::";
+    private ArrayList<Player> players = new ArrayList<>();
+    
+
+    //BEGIN: File reader then writer
+    private Player unmarshallPlayer(String itemAsPlayer) {
+        //we are expecting a line read in from our file like the following
+        //Name::Wins::Losses
+        String[] playerTokens = itemAsText.split(DELIMITER);
+        Item unmarshalledItem = new Item();
+        BigDecimal price = new BigDecimal(itemTokens[1]);
+        //specify the indices
+        //0 -> Name
+        unmarshalledItem.setName(itemTokens[0]);
+        //1 -> Price
+        unmarshalledItem.setPrice(price);
+        //2 -> Inventory
+        unmarshalledItem.setInventory(Integer.parseInt(itemTokens[2]));
+
+        return unmarshalledItem;
+
+    }
+
+    private void loadItems() throws ItemPersistenceException {
+        Scanner scanner;
+        try {
+            scanner = new Scanner(new BufferedReader(new FileReader(path)));
+            String currentLine;
+            Item currentItem;
+
+            //loops through while still lines
+            //sets current line to line being read then unmarshalls that line
+            //currentItem then becomes that unmarshalled line
+            if (items.isEmpty()) {
+                while (scanner.hasNextLine()) {
+                    currentLine = scanner.nextLine();
+                    currentItem = unmarshallItem(currentLine);
+                    if (currentItem != null) {
+                        items.add(currentItem);
+                        currentItem.setItemIndex(items.indexOf(currentItem));
+                    }
+                }
+                scanner.close();
+            }
+        } catch (FileNotFoundException e) {
+            throw new ItemPersistenceException("Could not load file into database", e);
+        }
+    }
+
+    private String marshallItem(Item anItem) {
+        //we want to write an item into a line of text matching the below format
+        //ItemName::Price::Inventory
+        String itemAsText = anItem.getName() + DELIMITER;
+        itemAsText += anItem.getPrice().toString() + DELIMITER;
+        itemAsText += anItem.getInventory();
+
+        return itemAsText;
+    }
+
+    private void writeItems() throws ItemPersistenceException {
+        PrintWriter out;
+
+        try {
+            out = new PrintWriter(new FileWriter(path));
+            String itemAsText;
+            List<Item> itemList = this.getAllItems();
+            for (Item currentItem : itemList) {
+                itemAsText = marshallItem(currentItem);
+                out.println(itemAsText);
+                out.flush();
+            }
+            out.close();
+        } catch (IOException e) {
+            throw new ItemPersistenceException("Could not save", e);
+        }
+    }
+    //END: File reader then writer
+
+    //BEGIN: Application methods
+    @Override
+    public Item addItem(Item item) throws ItemPersistenceException {
+        loadItems();
+        items.add(item);
+        item.setItemIndex(items.indexOf(item));
+        writeItems();
+        return item;
+    }
+
+    @Override
+    public List<Item> getAllItems() throws ItemPersistenceException {
+        loadItems();
+        return items;
+    }
+
+    @Override
+    public Item getItem(int itemIndex) throws ItemPersistenceException {
+        loadItems();
+        return items.get(itemIndex);
+    }
+
+//    @Override   stretch goal did not figure out a clean way to implement this 
+//    public Item removeItem(int itemIndex) throws ItemPersistenceException {
+//        loadItems();
+//        Item removedItem = items.remove(itemIndex);
+//        writeItems();
+//        return removedItem;
+//    }
+    //END: Application methods
+    @Override
+    public Player updatePlayer(int itemIndex) throws PersistenceException {
+        loadItems();
+        Item item = items.get(itemIndex);
+        item.setInventory((item.getInventory() - 1));
+        writeItems();
+        return item;
+    }
+
+}
